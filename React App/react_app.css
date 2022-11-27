@@ -1,0 +1,138 @@
+:root{
+    --dark: #513737;
+	--darker: #371f1f;
+	--darkest: #271111;
+    --red:#FF4136;
+}
+body{
+    background-color: var(--darkest);
+    margin: 0;
+}
+header{
+    background-color: white;
+    z-index: 10;
+    width:100vw;
+    margin-top: 2%;
+    height:15vh;
+    display: flex;
+    position:fixed;
+    box-shadow: 0px 0px 80px var(--red);
+    justify-content: space-between;
+}
+.logo{
+    color: gold;
+    text-shadow: 0px 0px 5px goldenrod,0 0 20px gold;
+    text-align: center;
+    margin-left: 10%;
+    font-size: 5rem;
+}
+.options{
+    display:flex;
+    background-color: var(--red);
+    align-items: center;
+    padding: 10px;
+    margin:5px;
+    border-radius: 20px;
+}
+section{
+    min-height: 100vh;
+}
+.cont{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    min-height: 50vh;
+    padding-top: 15%;
+    margin: 0 auto;
+}
+.card{
+    min-width:30%;
+    max-width: 45%;
+    height: 270px;
+    margin-bottom:5%;
+    border-radius: 20px;
+    border-start-start-radius: 80px;
+    border-start-end-radius: 80px;
+    background-color: var(--red);
+}
+.profile{
+    height:160px;
+    border-radius:100px;
+    margin:1%;
+    background-color: var(--dark);
+}
+.pic{
+    z-index: 0;
+    width: 150px;
+    height:150px;
+    border-radius:75px;
+    border:2px solid var(--red);
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+}
+.profile h1{
+    z-index: 5;
+    margin: auto;
+    width: 40%;
+    border-radius:10px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    background-color: #fff;
+}
+.details h1,h3{
+    margin-left: 10%;
+}
+.loader{
+    display:flex;
+    margin:auto auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color:var(--red);
+    animation: upper 1s;
+    animation-iteration-count:infinite;
+}
+.loader::after{
+    content:'';
+    color: wheat;
+    z-index: 5;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: auto auto;
+    align-items: center;
+    animation: lower 1s;
+    animation-iteration-count:infinite;
+    background-color: var(--darkest);
+}
+@keyframes upper {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    50%{
+        width: 160px;
+        height: 160px;
+    }
+    100%{
+        width: 100px;
+        height: 100px;
+    }
+}
+@keyframes lower {
+    0% {
+        width: 70px;
+        height: 70px;
+    }
+    50%{
+        width: 150px;
+        height: 150px;
+    }
+    100%{
+        width: 70px;
+        height: 70px;
+    }
+}

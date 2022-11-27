@@ -1,0 +1,116 @@
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(135deg,var(--darkest)0% 10%,var(--grey) 10% 12%,var(--darkest) 12% 17%,var(--pink) 17% 18%,var(--darkest) 18% 80% ,var(--darker)80%);
+}
+.cont{
+    width: 40vw;
+    min-height: 60vh;
+    background-color: var(--darker);
+    border-radius: 5vh;
+    border: 3px solid greens;
+    box-shadow: 0px 10px 10px var(--purple);
+    overflow: hidden;
+    transition: .5s;
+}
+.cont:hover{
+    box-shadow: 0px 10px 20px var(--purple);
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5vh;
+    width: 90%;
+    min-height:5vh;
+    outline: none;
+    margin:5vh auto;
+    box-shadow: 0px 10px 20px var(--pink);
+    background-color: var(--light);
+    transition: 1s;
+}
+.todo{
+    display: flex;
+    flex-direction: column;
+}
+.task{
+    background-color:var(--dark);
+    display:flex;
+    align-items: center;
+    width:80%;
+    margin:1vh auto;
+    border-radius: 5vh;
+    min-height: 5vh;
+    padding-left: 30px;
+    letter-spacing: .1rem;
+    transition: .4s;
+}
+.task:hover{
+    box-shadow: 0px 0px 5px var(--grey);
+}
+.a{ 
+    width: 67%;
+    overflow-x:scroll;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--pink);
+    scrollbar-width: thin;
+    word-wrap: break-word;
+    display: flex;
+    color: white;
+    transition: 1s;
+}
+
+.b{
+    width: 35%;
+}
+.done:hover,
+.remove:hover{
+   color: #fff;
+   cursor: pointer;
+   text-shadow:2px 2px 5px  #ffffff;
+   transition: .5s;
+}
+.done ,
+.remove{
+    outline: none;
+    border: none;  
+}
+
+.done{
+    outline:none;
+    border: none;
+     background-image: linear-gradient(to right, var(--pink),white);
+     
+    background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.remove{
+    color: crimson;
+    border: none;
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 15px;
+    height: 2px;
+
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-image:linear-gradient(45deg,var(--purple), var(--pink)); 
+    border-radius: 10px;
+}
+  

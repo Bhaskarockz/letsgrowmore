@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <script src="todo.js"></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="cont">
+        <input type="text" id="text" class="text" placeholder="add new task" >
+        <div class="todo" id="todo">
+        
+        </div>
+    </div>
+
+    <script>
+        var text = document.getElementById("text");
+        var todo = document.getElementById("todo");
+       text.addEventListener("keypress", function(event){
+       if(event.key === "Enter"){
+       var input=text.value;
+       if(input==''){
+        alert("don't have TASKS...?")
+       }
+       else{
+       const task = document.createElement('div');
+       task.classList.add('task');
+
+       const a = document.createElement('div');
+       a.classList.add('a');
+
+       const b = document.createElement('div');
+       b.classList.add('b');
+
+       const done = document.createElement('button');
+       const remove = document.createElement('button');
+ 
+        done.classList.add('done');
+        remove.classList.add('remove');
+        a.innerHTML=input;
+
+        remove.innerHTML="REMOVE";
+        done.innerHTML="DONE"; 
+        task.appendChild(a);
+        task.appendChild(b);
+       
+        b.appendChild(done);
+        b.appendChild(remove);
+        todo.appendChild(task);
+         text.value='';
+
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
+
+        remove.addEventListener('click',(e)=>{
+            todo.removeChild(task);
+        })
+        done.addEventListener('click',(e)=>{
+            task.style.backgroundColor="rgba(93, 255, 18,0.2)";
+            a.style.textDecoration="line-through";
+            task.style.boxShadow=" 2px 2px 10px black"
+
+        })
+    }
+}
+})
+    </script>
+</body>
+</html>
